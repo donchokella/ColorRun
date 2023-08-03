@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Coin : MonoBehaviour, IInteractable
+public class Coin : MonoBehaviour, IInteractable, ICoin
 {
-    [SerializeField] private int _score;
-    [SerializeField] private TextMeshProUGUI _coinText;
+    private int CoinAmount = 1;
 
-    private void AddCoin()
+    public void BeCollected()
     {
         gameObject.SetActive(false);
-
-        _score++;
-        _coinText.text = "Score: " + _score.ToString();
     }
 
-    public void InteractLogic()
+    public int MyCount()
     {
-        AddCoin();
+        return CoinAmount;
     }
 }
