@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Obstacle : MonoBehaviour, IInteractable
+public class Obstacle : MonoBehaviour, IInteractable, IObstacle
 {
-    private void TakeDamage()
+    [SerializeField] private GameObject gameOverScene;
+
+
+    public void TakeDamage()
     {
         Debug.Log("obs!!!");
-    }
-    public void InteractLogic()
-    {
-        TakeDamage();
+        gameOverScene.SetActive(true);
     }
 }
