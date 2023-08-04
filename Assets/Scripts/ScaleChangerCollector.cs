@@ -5,7 +5,7 @@ using System;
 
 public class ScaleChangerCollector : MonoBehaviour
 {
-    [SerializeField] private InteractManager interactManager;
+    [SerializeField] private InteractManager _interactManager;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float scaleIncrement = 1.2f;
 
@@ -13,7 +13,7 @@ public class ScaleChangerCollector : MonoBehaviour
     private void Start()
     {
         playerTransform = GetComponent<Transform>();
-        interactManager.OnInteractableTriggered += CollectScaleChanger;
+        _interactManager.OnInteractableTriggered += CollectScaleChanger;
     }
 
 

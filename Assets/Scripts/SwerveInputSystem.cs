@@ -7,7 +7,7 @@ public class SwerveInputSystem : MonoBehaviour
     private float _lastFrameMousePositionX;
     private float _moveFacetorX;
 
-    public float MoveFactorX => _moveFacetorX;// ??? bu syntax tam olarak ne yapıyor
+    public float MoveFactorX => _moveFacetorX;
 
 
     private void Update()
