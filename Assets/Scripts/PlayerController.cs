@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static float GeneralSpeedAspect = 1;
     [SerializeField] private float _runningSpeed;
-    private PlayerColor _currentColor = PlayerColor.Blue; // Default Player Color
 
-    public enum PlayerColor
+    private void Start()
     {
-        Blue,
-        Purple,
-        Orange
+        GeneralSpeedAspect = 1;
     }
-
-    
     private void Update()
     {
-        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + _runningSpeed * Time.deltaTime);
+        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + _runningSpeed * GeneralSpeedAspect * Time.deltaTime);
         transform.position = newPos;
     }
 

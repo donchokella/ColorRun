@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class FinLine : MonoBehaviour, IInteractable
 {
-    [SerializeField] private PlayerController playerController;
-    [SerializeField] private SwerveMovement swerveMovement;
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameManager _gameManager;
 
     private void FinishGame()
     {
-        Debug.Log("finnnn");
-        playerController.SetRunningSpeed(0);
-        gameManager.NextScene();
-
+        _animator.SetTrigger("Finish");
+        PlayerController.GeneralSpeedAspect = 0;
+        _gameManager.NextScene();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,8 +19,6 @@ public class FinLine : MonoBehaviour, IInteractable
         if (other.gameObject.CompareTag("Player"))
         {
             FinishGame();
-            swerveMovement.SwerveSpeed = 0;
-            _animator.SetBool("IsHit", true);
         }
     }
 

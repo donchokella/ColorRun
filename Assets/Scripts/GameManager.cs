@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public void RestartBtn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerController.GeneralSpeedAspect = 1;
     }
 
     public void NextScene()

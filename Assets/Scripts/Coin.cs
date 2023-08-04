@@ -5,7 +5,7 @@ using TMPro;
 
 public class Coin : MonoBehaviour, IInteractable, ICoin
 {
-    private int CoinAmount = 1;
+    private int _coinAmount = 1;
 
     public void BeCollected()
     {
@@ -14,6 +14,6 @@ public class Coin : MonoBehaviour, IInteractable, ICoin
 
     public int MyCount()
     {
-        return CoinAmount;
+        return _coinAmount;
     }
 }

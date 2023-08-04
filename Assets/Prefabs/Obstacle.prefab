@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5778896836976320397}
   - component: {fileID: 7466158509702582312}
   - component: {fileID: 4646000481490298082}
-  - component: {fileID: 8855331217430001304}
+  - component: {fileID: 6764933344377968007}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8855331217430001304
-SphereCollider:
+--- !u!65 &6764933344377968007
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,5 +95,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.42349684
+  m_Size: {x: 0.8469937, y: 0.8469937, z: 0.8469937}
   m_Center: {x: 0, y: 0, z: 0}

@@ -6,21 +6,30 @@ using System;
 public class ScaleChangerCollector : MonoBehaviour
 {
     [SerializeField] private InteractManager interactManager;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float scaleIncrement = 1.2f;
 
-    public Action OnScaleChange;
 
     private void Start()
     {
+        playerTransform = GetComponent<Transform>();
         interactManager.OnInteractableTriggered += CollectScaleChanger;
     }
 
+
     private void CollectScaleChanger(IInteractable interactable)
     {
-        if (interactable is IScaleChanger scaleChanger)
+        if (interactable is ColorCollectable colorCollectable)
         {
-            scaleChanger.BeCollected();
-            OnScaleChange?.Invoke();
+            if (PlayerColorChanger.PlayerColor == colorCollectable.MyColor ||
+             Colors.Green == colorCollectable.MyColor)
+            {
+                playerTransform.localScale *= colorCollectable.ScaleIncreaseAmount;
+            }
+            else
+            {
+                playerTransform.localScale /= colorCollectable.ScaleIncreaseAmount;
+            }
         }
     }
-
 }

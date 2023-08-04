@@ -17,7 +17,7 @@ public class SwerveMovement : MonoBehaviour
 
     private void Update()
     {
-        float swerveAmount = Time.deltaTime * SwerveSpeed * _swerveInputSystem.MoveFactorX;
+        float swerveAmount = Time.deltaTime * SwerveSpeed * PlayerController.GeneralSpeedAspect * _swerveInputSystem.MoveFactorX;
         swerveAmount = Mathf.Clamp(swerveAmount, -_maxSwerveAmount, _maxSwerveAmount);
 
         Vector3 newPosition = transform.position + new Vector3(swerveAmount, 0, 0);

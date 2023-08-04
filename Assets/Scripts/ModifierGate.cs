@@ -4,30 +4,19 @@ using UnityEngine;
 
 public class ModifierGate : MonoBehaviour, IInteractable, IGate
 {
-    [SerializeField] private PlayerController playerController;
 
-    [SerializeField] private PlayerController.PlayerColor gateColor;
-
-    public enum ModifierGateColor
-    {
-        Blue,
-        Purple,
-        Orange
-    }
-
-
-    public Color MyColor()
+    [SerializeField] private Colors gateColor;
+    public (Color, Colors) MyColor()
     {
         switch (gateColor)
         {
-            case PlayerController.PlayerColor.Blue:
-                return ColorPalette.Instance.Blue;
-            case PlayerController.PlayerColor.Purple:
-                return ColorPalette.Instance.Purple;
-            case PlayerController.PlayerColor.Orange:
-                return ColorPalette.Instance.Orange;
-
+            case Colors.Blue:
+                return (ColorPalette.Instance.Blue, Colors.Blue);
+            case Colors.Purple:
+                return (ColorPalette.Instance.Purple, Colors.Purple);
+            case Colors.Orange:
+                return (ColorPalette.Instance.Orange, Colors.Orange);
         }
-        return Color.blue;
+        return (Color.blue, Colors.Blue);
     }
 }

@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface IGate
 {
-    public Color MyColor();
-
+    public (Color, Colors) MyColor();
 }
