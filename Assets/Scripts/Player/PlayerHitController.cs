@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerHitController : MonoBehaviour
 {
-    [SerializeField] private InteractManager _interactManager;
+    private InteractManager _interactManager;
+    
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _gameOverObject;
 
     private void Start()
     {
+        _interactManager = GetComponent<InteractManager>();
+
         _interactManager.OnInteractableCollided += ControlHit;
     }
 

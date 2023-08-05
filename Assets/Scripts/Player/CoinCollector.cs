@@ -5,16 +5,16 @@ using System;
 
 public class CoinCollector : MonoBehaviour
 {
-    [SerializeField] private InteractManager _interactManager;
+    private InteractManager _interactManager;
     private int _coinAmount = 0;
+    
     public Action<int> OnCoinAmountChanged;
-
 
     private void Start()
     {
+        _interactManager = GetComponent<InteractManager>();
         _interactManager.OnInteractableTriggered += CollectCoin;
     }
-
 
     private void CollectCoin(IInteractable interactable)
     {

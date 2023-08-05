@@ -21,6 +21,4 @@ public class FinLine : MonoBehaviour, IInteractable
             FinishGame();
         }
     }
-
-
 }

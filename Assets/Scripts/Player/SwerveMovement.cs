@@ -5,10 +5,11 @@ using UnityEngine;
 public class SwerveMovement : MonoBehaviour
 {
     private SwerveInputSystem _swerveInputSystem;
+
     public float SwerveSpeed = 0.5f;
+
     [SerializeField] private float _maxSwerveAmount = 1f;
     [SerializeField] private float _limitX;
-
 
     private void Awake()
     {

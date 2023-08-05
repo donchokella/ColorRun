@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyColor: 0
-  _scaleIncreaseAmount: 1.2
+  _scaleIncreaseAmount: 1.05
 --- !u!1001 &926981962925283648
 PrefabInstance:
   m_ObjectHideFlags: 0

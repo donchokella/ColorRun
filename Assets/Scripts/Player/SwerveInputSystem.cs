@@ -9,7 +9,6 @@ public class SwerveInputSystem : MonoBehaviour
 
     public float MoveFactorX => _moveFacetorX;
 
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -25,5 +24,4 @@ public class SwerveInputSystem : MonoBehaviour
             _moveFacetorX = 0f;
         }
     }
-
 }

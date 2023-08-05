@@ -6,5 +6,4 @@ public interface ICoin
 {
     public int MyCount();
     public void BeCollected();
-
 }

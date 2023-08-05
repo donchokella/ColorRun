@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ModifierGate : MonoBehaviour, IInteractable, IGate
 {
-
     [SerializeField] private Colors gateColor;
+    
     public (Color, Colors) MyColor()
     {
         switch (gateColor)

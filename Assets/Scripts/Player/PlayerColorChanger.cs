@@ -5,15 +5,18 @@ using UnityEngine;
 public class PlayerColorChanger : MonoBehaviour
 {
     public static Colors PlayerColor { get; private set; }
-    [SerializeField] private InteractManager _interactManager;
+
+    private InteractManager _interactManager;
+
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
 
     private void Start()
     {
+        _interactManager = GetComponent<InteractManager>();
+
         PlayerColor = Colors.Blue;
         _interactManager.OnInteractableTriggered += ChangeColor;
     }
-
 
     private void ChangeColor(IInteractable interactable)
     {
@@ -24,6 +27,4 @@ public class PlayerColorChanger : MonoBehaviour
             PlayerColor = colorenum;
         }
     }
-
-
 }
